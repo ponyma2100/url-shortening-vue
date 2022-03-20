@@ -1,16 +1,25 @@
 <template>
   <form @submit.prevent>
     <input type="text" placeholder="Shorten a link here..." v-model="url" />
-    <button>Shorten it!</button>
+    <button @click="handleUrl">Shorten it!</button>
   </form>
+  <p>shortUrl:{{ shortUrl }}</p>
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
+import getLink from "../composables/getLink";
+
 export default {
   setup() {
     let url = ref("");
-    return { url };
+    const { shortenUrl, shortUrl } = getLink();
+
+    const handleUrl = (e) => {
+      shortenUrl(url.value);
+    };
+
+    return { url, handleUrl, shortUrl };
   },
 };
 </script>
