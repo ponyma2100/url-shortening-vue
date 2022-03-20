@@ -27,12 +27,13 @@ export default {};
 <style scoped>
 header {
   display: flex;
-  height: 500px;
+  height: 600px;
 }
 .title {
   font-size: 36px;
   font-weight: bold;
   padding: 0;
+  line-height: 5rem;
 }
 .subtitle {
   padding: 0;

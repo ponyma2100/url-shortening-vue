@@ -13,7 +13,6 @@
       </div>
       <div class="links">
         <div class="login"><a href="#">Login</a></div>
-        <!-- <button class="login">Login</button> -->
         <button class="signup">Sign Up</button>
       </div>
     </nav>
@@ -28,7 +27,8 @@ export default {};
 .navbar {
   padding: 16px 10px;
   background: white;
-  padding: 0 20px;
+  padding: 0 40px;
+  height: 150px;
 }
 nav {
   display: flex;

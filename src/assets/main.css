@@ -15,7 +15,8 @@
 /* base styles  */
 * {
   margin: 0;
-  padding: 8px 20px;
+  /* padding-top: 8px ; */
+  padding: 8px 10px;
   font-family: 'Poppins', sans-serif;
 }
 body {
