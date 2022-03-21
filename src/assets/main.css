@@ -38,7 +38,7 @@ ul {
 /* buttons */
 button, .btn { 
   background: var(--primary);
-  border-radius: 20px;
+  border-radius: 8px;
   border: 0;
   padding: 8px 12px;
   font-weight: 600;
@@ -55,4 +55,9 @@ button:disabled {
   color: var(--primary);
   background: var(--secondary);
   cursor: not-allowed;
+}
+
+
+textarea:focus, input:focus{
+    outline: none;
 }
