@@ -17,7 +17,9 @@
     <div class="output-link">
       <a :href="'http://' + shortUrl" target="_blank">{{ shortUrl }}</a>
     </div>
-    <button class="copy">Copy</button>
+    <button class="copy" :class="{ copied: isCopied }" @click="handleCopied">
+      Copy
+    </button>
   </div>
 </template>
 
@@ -30,6 +32,7 @@ export default {
     let url = ref("");
     let showUrl = ref("");
     let isFrame = ref(false);
+    let isCopied = ref(false);
     const { shortenUrl, shortUrl } = getLink();
 
     const handleUrl = (e) => {
@@ -44,7 +47,28 @@ export default {
       }
     };
 
-    return { url, handleUrl, shortUrl, showUrl, isFrame };
+    const handleCopied = async () => {
+      try {
+        isCopied.value = true;
+        await navigator.clipboard.writeText(shortUrl.value);
+
+        setTimeout(() => {
+          isCopied.value = false;
+        }, 2000);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    return {
+      url,
+      handleUrl,
+      shortUrl,
+      showUrl,
+      isFrame,
+      handleCopied,
+      isCopied,
+    };
   },
 };
 </script>
@@ -113,5 +137,22 @@ form button {
 .copy {
   height: 2.5rem;
   width: 6rem;
+  position: relative;
+}
+
+.copied::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "Copied!";
+  z-index: 2;
+  background: hsl(257, 27%, 26%);
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>
