@@ -25,7 +25,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: var(--primary);
+  color: var(--neutral-gray2);
 }
 a:hover {
   filter: opacity(0.8);
@@ -33,6 +33,15 @@ a:hover {
 ul {
     list-style-type: none;
     font-size: 16px;
+    color: #fff;
+}
+
+li {
+  color: var(--neutral-gray2);
+}
+li:hover {
+  color: var(--primary);
+  cursor: pointer;
 }
 
 /* buttons */

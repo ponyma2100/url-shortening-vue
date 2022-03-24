@@ -1,8 +1,6 @@
 <template>
-  <div class="home">
-    <Cover />
-    <Main />
-  </div>
+  <Cover />
+  <Main />
 </template>
 
 <script>

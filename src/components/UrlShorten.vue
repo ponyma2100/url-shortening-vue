@@ -36,7 +36,6 @@ export default {
     const { shortenUrl, shortUrl } = getLink();
 
     const handleUrl = (e) => {
-      console.log("click");
       if (!url.value) {
         isFrame.value = true;
       } else {
@@ -119,6 +118,9 @@ form button {
 }
 .output-link {
   margin-left: auto;
+}
+.output-link a {
+  color: hsl(180, 66%, 49%);
 }
 
 .frame {

@@ -1,7 +1,6 @@
 <template>
   <article>
     <UrlShorten />
-
     <div class="title">
       <h1>Advanced Statistics</h1>
       <span
@@ -48,6 +47,10 @@
         </div>
       </div>
     </div>
+    <div class="box-bottom">
+      <p class="box-bottom-info">Boost your links today</p>
+      <button class="bottom-btn"><a href="#">Get Started</a></button>
+    </div>
   </article>
 </template>
 
@@ -63,11 +66,16 @@ export default {
 <style scoped>
 article {
   width: 100%;
-  height: 800px;
+  height: 900px;
   background: #f0f1f6;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.box-container {
+.box-container,
+.box-bottom {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -104,5 +112,40 @@ h5 {
   width: 30px;
   height: 2px;
   background: hsl(180, 66%, 49%);
+}
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title span {
+  width: 36%;
+  font-size: 16px;
+  color: hsl(257, 7%, 63%);
+}
+
+.box-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-image: url("../assets/bg-boost-desktop.svg");
+  background-color: hsl(257, 27%, 26%);
+  background-repeat: round;
+}
+.box-bottom-info {
+  font-size: 28px;
+  color: #fff;
+}
+.bottom-btn {
+  width: 130px;
+  height: 40px;
+  border-radius: 20px;
+}
+.bottom-btn a {
+  color: #fff;
 }
 </style>
