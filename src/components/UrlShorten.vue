@@ -100,6 +100,7 @@ form input {
 form button {
   width: 7rem;
   height: 3rem;
+  border-radius: 8px;
 }
 
 .info {
@@ -140,6 +141,7 @@ form button {
   height: 2.5rem;
   width: 6rem;
   position: relative;
+  border-radius: 8px;
 }
 
 .copied::before {

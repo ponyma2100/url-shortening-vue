@@ -21,7 +21,7 @@
           </h5>
         </div>
       </div>
-      <div class="sticker"></div>
+      <!-- <div class="sticker"></div> -->
       <div class="box-container-center box">
         <div class="image">
           <img src="../assets/icon-detailed-records.svg" alt="" />
@@ -66,12 +66,12 @@ export default {
 <style scoped>
 article {
   width: 100%;
-  height: 900px;
+  height: 1000px;
   background: #f0f1f6;
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  position: relative;
 }
 
 .box-container,
@@ -79,17 +79,41 @@ article {
   width: 100%;
   display: flex;
   justify-content: center;
+  z-index: 999;
+}
+
+.box-container {
+  position: relative;
 }
 
 .box {
   display: flex;
   flex-direction: column;
   width: 350px;
-  height: 270px;
+  min-height: 250px;
   background: #fff;
   border-radius: 8px;
   margin: 20px 20px;
   position: relative;
+  z-index: 999;
+}
+
+.box-container-center {
+  top: 10%;
+}
+
+.box-container-right {
+  top: 20%;
+}
+
+.box-container::after {
+  content: "";
+  width: 500px;
+  height: 10px;
+  background: hsl(180, 66%, 49%);
+  z-index: -1;
+  top: 50%;
+  position: absolute;
 }
 .image {
   background: hsl(255, 11%, 22%);
@@ -135,6 +159,8 @@ h5 {
   background-image: url("../assets/bg-boost-desktop.svg");
   background-color: hsl(257, 27%, 26%);
   background-repeat: round;
+  position: absolute;
+  bottom: 0;
 }
 .box-bottom-info {
   font-size: 28px;
