@@ -1,5 +1,7 @@
 # url-shortening-vue
 
+https://ponyma2100.github.io/url-shortening-vue/
+
 ## Project setup
 ```
 npm install
