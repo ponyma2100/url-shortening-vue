@@ -80,6 +80,7 @@ article {
   display: flex;
   justify-content: center;
   z-index: 999;
+  padding: 0;
 }
 
 .box-container {
@@ -173,5 +174,37 @@ h5 {
 }
 .bottom-btn a {
   color: #fff;
+}
+
+@media screen and (max-width: 750px) {
+  article {
+    height: auto;
+  }
+
+  .box {
+    margin-bottom: 60px;
+  }
+  .title span {
+    width: 80%;
+  }
+
+  .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box-container::after {
+    width: 10px;
+    height: 80%;
+    top: 0;
+    left: 50%;
+  }
+
+  .box-bottom {
+    position: relative;
+  }
+  .image {
+    left: 40%;
+  }
 }
 </style>

@@ -27,8 +27,9 @@ export default {};
 <style scoped>
 header {
   display: flex;
-  height: 600px;
+  margin-bottom: 200px;
 }
+
 .title {
   font-size: 36px;
   font-weight: bold;
@@ -40,7 +41,7 @@ header {
   color: hsl(0, 0%, 75%);
 }
 .container-left {
-  width: 60%;
+  /* width: 60%; */
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -52,13 +53,30 @@ header {
 }
 
 .container-right {
-  width: 40%;
+  /* width: 40%; */
   overflow: hidden;
 }
 
 .container-right img {
-  width: 40vw;
+  /* width: 40vw; */
   min-width: 20vw;
   right: 60px;
+}
+
+@media screen and (max-width: 750px) {
+  header {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+  }
+  .container-left {
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  .title {
+    font-size: 24px;
+  }
 }
 </style>

@@ -14,9 +14,9 @@
 
   <div class="output" v-show="shortUrl">
     <p>{{ showUrl }}</p>
-    <div class="output-link">
-      <a :href="'http://' + shortUrl" target="_blank">{{ shortUrl }}</a>
-    </div>
+    <a class="output-link" :href="'http://' + shortUrl" target="_blank">{{
+      shortUrl
+    }}</a>
     <button class="copy" :class="{ copied: isCopied }" @click="handleCopied">
       Copy
     </button>
@@ -87,6 +87,8 @@ form {
   position: relative;
   top: -12%;
   left: 5%;
+  min-width: 360px;
+  min-height: 150px;
 }
 
 form input {
@@ -119,8 +121,6 @@ form button {
 }
 .output-link {
   margin-left: auto;
-}
-.output-link a {
   color: hsl(180, 66%, 49%);
 }
 
@@ -158,5 +158,48 @@ form button {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@media screen and (max-width: 750px) {
+  form {
+    left: 0;
+    min-width: auto;
+  }
+  .info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+  }
+  .info input {
+    width: 95%;
+    margin-right: 0;
+  }
+  .info button {
+    width: 100%;
+  }
+
+  .output {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 10px 10px;
+    margin-top: 20px;
+    min-width: auto;
+    left: 0;
+  }
+  .output-link {
+    width: 97%;
+    border-top: 1px solid var(--neutral-gray1);
+  }
+  .copy {
+    width: 100%;
+  }
+
+  .warning {
+    bottom: 40%;
+  }
 }
 </style>

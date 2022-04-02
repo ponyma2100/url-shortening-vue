@@ -72,6 +72,7 @@ footer {
   background: hsl(260, 8%, 14%);
   display: flex;
   justify-content: space-around;
+  padding: 0;
 }
 .footer-logo {
   filter: brightness(100);
@@ -84,5 +85,18 @@ footer {
 }
 .footer-brand a svg:hover path {
   fill: var(--primary);
+}
+
+@media screen and (max-width: 750px) {
+  footer {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
