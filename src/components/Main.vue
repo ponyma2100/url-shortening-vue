@@ -183,6 +183,7 @@ h5 {
 
   .box {
     margin-bottom: 60px;
+    width: 80%;
   }
   .title span {
     width: 80%;
